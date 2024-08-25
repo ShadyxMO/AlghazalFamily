@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عائلة الغزال</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+        }
+        header {
+            background: #ffb6c1;
+            color: #fff;
+            padding: 20px;
+            border-bottom: 5px solid #ff69b4;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .section {
+            background: #ffebf2;
+            border: 1px solid #ff69b4;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 15px;
+            cursor: pointer;
+        }
+        .section:hover {
+            background: #ffe4e1;
+        }
+        .details {
+            display: none;
+            text-align: left;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .details li {
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .details li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>عائلة الغزال</h1>
+    </header>
+    <div class="container">
+        <div class="section" onclick="playSound('clickSound'); toggleDetails('familyDetails')">
+            <h2>عائلة الغزال</h2>
+        </div>
+        <div id="familyDetails" class="details">
+            <div class="section" onclick="playSound('clickSound'); toggleDetails('aliDetails')">
+                <h3>الزوج علي</h3>
+            </div>
+            <div id="aliDetails" class="details">
+                <ul>
+                    <li onclick="playSound('clickSound'); toggleDetails('batlaDetails')">الزوجة بتلاء</li>
+                    <li onclick="playSound('clickSound'); toggleDetails('fatimaDetails')">الزوجة فاطمة</li>
+                </ul>
+            </div>
+            <div id="batlaDetails" class="details">
+                <ul>
+                    <li>حسين</li>
+                    <li>عبدالله</li>
+                    <li>نعيمة</li>
+                    <li>أشواق</li>
+                    <li>أحمد</li>
+                    <li>ياسر</li>
+                    <li>عصام</li>
+                    <li>آمنة</li>
+                </ul>
+            </div>
+            <div id="fatimaDetails" class="details">
+                <ul>
+                    <li>باسم</li>
+                    <li>شريفة</li>
+                    <li>محمد</li>
+                    <li>بسمة</li>
+                    <li>أيمن</li>
+                    <li>عبدالعزيز</li>
+                    <li>منتظر</li>
+                    <li>زينب</li>
+                    <li>عبدالرحمن</li>
+                    <li>فارس</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- استبدل الرابط برابط ملف الصوت الخاص بك -->
+    <audio id="clickSound" src="رابط_ملف_الصوت.mp3"></audio>
+    <script>
+        function toggleDetails(id) {
+            const element = document.getElementById(id);
+            if (element.style.display === 'none' || element.style.display === '') {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        }
+        function playSound(id) {
+            const audio = document.getElementById(id);
+            audio.play();
+        }
+    </script>
+</body>
+</html>
